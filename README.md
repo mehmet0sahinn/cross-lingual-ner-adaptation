@@ -1,4 +1,4 @@
-# Cross-Lingual Named Entity Recognition (NER) with XLM-RoBERTa
+# Cross-Lingual NER with XLM-R: Zero & Few-Shot Adaptation to Turkish
 
 This repository presents a multilingual Named Entity Recognition (NER) model fine-tuned on Turkish using the `xlm-roberta-base` model. The training data is derived from the PAN-X dataset within the XTREME benchmark.
 
