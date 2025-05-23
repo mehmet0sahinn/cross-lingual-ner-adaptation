@@ -19,11 +19,17 @@ This repository presents a multilingual Named Entity Recognition (NER) model fin
 - F1 Score: 0.9273
 
 | Training Loss | Epoch | Step | Validation Loss | Accuracy | Precision | Recall | F1     |
-|---------------|-------|------|------------------|----------|-----------|--------|--------|
-| No log        | 1.0   | 417  | 0.1159           | 0.9689   | 0.9042    | 0.9274 | 0.9157 |
-| 0.0895        | 2.0   | 834  | 0.1148           | 0.9707   | 0.9185    | 0.9228 | 0.9207 |
-| 0.0895        | 3.0   | 1251 | 0.1209           | 0.9714   | 0.9171    | 0.9311 | 0.9241 |
-| 0.0485        | 4.0   | 1668 | 0.1222           | 0.9725   | 0.9212    | 0.9335 | 0.9273 |
+| ------------- | ----- | ---- | --------------- | -------- | --------- | ------ | ------ |
+| No log        | 1.0   | 417  | 0.1159          | 0.9689   | 0.9042    | 0.9274 | 0.9157 |
+| 0.0895        | 2.0   | 834  | 0.1148          | 0.9707   | 0.9185    | 0.9228 | 0.9207 |
+| 0.0895        | 3.0   | 1251 | 0.1209          | 0.9714   | 0.9171    | 0.9311 | 0.9241 |
+| 0.0485        | 4.0   | 1668 | 0.1222          | 0.9725   | 0.9212    | 0.9335 | 0.9273 |
+
+## Few-Shot Learning Curve
+
+The following chart illustrates how the model's F1 score improves on Turkish as the number of fine-tuning samples increases.
+
+![Learning Curve](assets/learning_curve.png)
 
 ## Usage Example
 
@@ -54,7 +60,6 @@ for entity in ner_results:
 
 - [Hugging Face Model](https://huggingface.co/mehmet0sahinn/xlm-roberta-base-cased-ner-turkish)
 - [Kaggle Notebook](https://www.kaggle.com/code/mehmet0sahinn/cross-lingual-ner-on-xlm-r)
-- [Gradio App](https://huggingface.co/spaces/...) (coming soon)
 
 ## Installation
 
