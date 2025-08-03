@@ -1,6 +1,13 @@
-# Cross-Lingual NER with XLM-R: Zero & Few-Shot Adaptation to Turkish
+# Cross-Lingual NER with XLM-R: Zero-Shot & Fine Tuned Adaptation to Turkish
 
 This repository presents a multilingual Named Entity Recognition (NER) model fine-tuned on Turkish using the `xlm-roberta-base` model. The training data is derived from the PAN-X dataset within the XTREME benchmark.
+
+## Phases
+
+The project consists of three phases.
+Phase 1:  EN and TR Zero-Shot results of XLM-R
+Phase 2: TR Zero-Shot results of XLM-R (fine-tuned in EN)
+Phase 3: TR adaptation results of XLM-R (fine-tuned EN+TR)
 
 ## Project Overview
 
