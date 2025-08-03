@@ -6,9 +6,10 @@ This repository presents a Cross-Lingual Named Entity Recognition (NER) Adaptati
 
 ## Phases
 
-- Phase 1: EN and TR Zero-Shot results of XLM-R
-- Phase 2: TR Zero-Shot results of XLM-R (fine-tuned on EN)
-- Phase 3: TR adaptation results of XLM-R (fine-tuned on EN+TR)
+- Phase 1: EN and TR Benchmark results of XLM-R (no fine-tuning)
+- Phase 2: EN and TR Benchmark results of XLM-R (fine-tuned on TR)
+- Phase 3: EN and TR Benchmark results of XLM-R (fine-tuned on EN)
+- Phase 4: EN and TR Benchmark results of XLM-R (fine-tuned on EN + [Incremental TR])
 
 ---
 
@@ -17,14 +18,15 @@ This repository presents a Cross-Lingual Named Entity Recognition (NER) Adaptati
 |   Phases      | EN-FT Samples | TR-FT Samples | English F1-Score | Turkish F1-Score |
 |:-------------:|:-------------:|:-------------:|:----------------:|:----------------:|
 |   Phase 1     |      0        |      0        |       0.72       |       0.63       |
-|   Phase 2     |      20000    |      0        |       0.97       |       0.75       |
-|   Phase 3.1   |      20000    |      250      |       0.97       |       0.81       |
-|   Phase 3.2   |      20000    |      500      |       0.97       |       0.84       |
-|   Phase 3.3   |      20000    |      1000     |       0.96       |       0.85       |
-|   Phase 3.4   |      20000    |      2000     |       0.96       |       0.87       |
-|   Phase 3.5   |      20000    |      5000     |       0.95       |       0.88       |
-|   Phase 3.6   |      20000    |      10000    |       0.93       |       0.90       |
-|   Phase 3.7   |      20000    |      20000    |       0.92       |       0.92       |
+|   Phase 2     |      0        |      20000    |       0.97       |       0.75       |
+|   Phase 3     |      20000    |      0        |       0.97       |       0.75       |
+|   Phase 4.1   |      20000    |      250      |       0.97       |       0.81       |
+|   Phase 4.2   |      20000    |      500      |       0.97       |       0.84       |
+|   Phase 4.3   |      20000    |      1000     |       0.96       |       0.85       |
+|   Phase 4.4   |      20000    |      2000     |       0.96       |       0.87       |
+|   Phase 4.5   |      20000    |      5000     |       0.95       |       0.88       |
+|   Phase 4.6   |      20000    |      10000    |       0.93       |       0.90       |
+|   Phase 4.7   |      20000    |      20000    |       0.92       |       0.92       |
 
 > *Note – English F1 decreases slightly as more Turkish data is added, reflecting capacity re-allocation. Scores remain ≥ 0.92.*
 
