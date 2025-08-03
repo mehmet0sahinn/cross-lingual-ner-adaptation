@@ -4,7 +4,6 @@ This repository presents a multilingual Named Entity Recognition (NER) model fin
 
 ## Phases
 
-- The project consists of three phases.
 - Phase 1:  EN and TR Zero-Shot results of XLM-R
 - Phase 2: TR Zero-Shot results of XLM-R (fine-tuned in EN)
 - Phase 3: TR adaptation results of XLM-R (fine-tuned EN+TR)
