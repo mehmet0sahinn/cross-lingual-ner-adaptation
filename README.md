@@ -33,7 +33,7 @@ This repository presents a Cross-Lingual Named Entity Recognition (NER) Adaptati
 ## Turkish Adaptation Curve
 F1 score vs. number of Turkish fine-tuning samples
 
-![Learning Curve](assets/learning_curve.png)
+![Learning Curve](assets/learning_curve.jpg)
 
 ---
 
