@@ -1,41 +1,41 @@
-# Cross-Lingual NER with XLM-R: Zero-Shot & Fine Tuned Adaptation to Turkish
+# Cross-Lingual NER Adaptation
 
-This repository presents a multilingual Named Entity Recognition (NER) model fine-tuned on Turkish using the `xlm-roberta-base` model. The training data is derived from the PAN-X dataset within the XTREME benchmark.
+This repository presents a Cross-Lingual Named Entity Recognition (NER) Adaptation on Turkish using the `xlm-roberta-base` model.
+
+---
 
 ## Phases
 
-- Phase 1:  EN and TR Zero-Shot results of XLM-R
-- Phase 2: TR Zero-Shot results of XLM-R (fine-tuned in EN)
-- Phase 3: TR adaptation results of XLM-R (fine-tuned EN+TR)
+- Phase 1: EN and TR Zero-Shot results of XLM-R
+- Phase 2: TR Zero-Shot results of XLM-R (fine-tuned on EN)
+- Phase 3: TR adaptation results of XLM-R (fine-tuned on EN+TR)
 
-## Project Overview
+---
 
-- Base Model: xlm-roberta-base (cased)
-- Task: Token Classification (NER)
-- Dataset: PAN-X Turkish (from XTREME)
-- Transfer Setup: Few-shot learning from English to Turkish
-- Final Evaluation: Over 92% F1-score
+## Evaluation Metrics of Phases
 
-## Final Evaluation Metrics
+|   Phases      | EN-FT Samples | TR-FT Samples | English F1-Score | Turkish F1-Score |
+|:-------------:|:-------------:|:-------------:|:----------------:|:----------------:|
+|   Phase 1     |      0        |      0        |       0.72       |       0.63       |
+|   Phase 2     |      20000    |      0        |       0.97       |       0.75       |
+|   Phase 3.1   |      20000    |      250      |       0.97       |       0.81       |
+|   Phase 3.2   |      20000    |      500      |       0.97       |       0.84       |
+|   Phase 3.3   |      20000    |      1000     |       0.96       |       0.85       |
+|   Phase 3.4   |      20000    |      2000     |       0.96       |       0.87       |
+|   Phase 3.5   |      20000    |      5000     |       0.95       |       0.88       |
+|   Phase 3.6   |      20000    |      10000    |       0.93       |       0.90       |
+|   Phase 3.7   |      20000    |      20000    |       0.92       |       0.92       |
 
-- Accuracy: 0.9725
-- Loss: 0.1222
-- Precision: 0.9212
-- Recall: 0.9335
-- F1 Score: 0.9273
+> *Note – English F1 decreases slightly as more Turkish data is added, reflecting capacity re-allocation. Scores remain ≥ 0.92.*
 
-| Training Loss | Epoch | Step | Validation Loss | Accuracy | Precision | Recall | F1     |
-| ------------- | ----- | ---- | --------------- | -------- | --------- | ------ | ------ |
-| No log        | 1.0   | 417  | 0.1159          | 0.9689   | 0.9042    | 0.9274 | 0.9157 |
-| 0.0895        | 2.0   | 834  | 0.1148          | 0.9707   | 0.9185    | 0.9228 | 0.9207 |
-| 0.0895        | 3.0   | 1251 | 0.1209          | 0.9714   | 0.9171    | 0.9311 | 0.9241 |
-| 0.0485        | 4.0   | 1668 | 0.1222          | 0.9725   | 0.9212    | 0.9335 | 0.9273 |
+---
 
-## Few-Shot Learning Curve
-
-The following chart illustrates how the model's F1 score improves on Turkish as the number of fine-tuning samples increases.
+## Turkish Adaptation Curve
+F1 score vs. number of Turkish fine-tuning samples
 
 ![Learning Curve](assets/learning_curve.png)
+
+---
 
 ## Usage Example
 
@@ -54,18 +54,24 @@ for entity in ner_results:
     print(entity)
 ```
 
+---
+
 ## Dataset
 
-- Source: PAN-X (from [XTREME Benchmark](https://huggingface.co/datasets/xtreme))
-- Language: Turkish (target), English (source)
-- Train Size: 20,000
-- Validation Size: 10,000
-- Test Size: 10,000
+- Source: PAN-X from the [google/xtreme](https://huggingface.co/datasets/google/xtreme).
+- Languages: English, Turkish
+- Training size 20K (EN) + 20K (TR) rows
+- Validation size 10K (EN) + 10K (TR)
+- Test size 10K (EN) + 10K (TR)
+
+---
 
 ## Resources
 
 - [Hugging Face Model](https://huggingface.co/mehmet0sahinn/xlm-roberta-base-cased-ner-turkish)
-- [Kaggle Notebook](https://www.kaggle.com/code/mehmet0sahinn/cross-lingual-ner-on-xlm-r)
+- [Kaggle Notebook](https://www.kaggle.com/code/mehmet0sahinn/cross-lingual-ner-adaptation)
+
+---
 
 ## Installation
 
@@ -73,12 +79,16 @@ for entity in ner_results:
 pip install -r requirements.txt
 ```
 
+---
+
 ## Running the Demo Locally
 
 ```bash
 cd gradio
 python app.py
 ```
+
+---
 
 ## License
 
