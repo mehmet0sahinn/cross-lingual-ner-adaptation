@@ -26,7 +26,7 @@ This repository presents a Cross-Lingual Named Entity Recognition (NER) Adaptati
 |   Phase 3.6   |      20000    |      10000    |       0.77       |       0.91       |
 |   Phase 3.7   |      20000    |      20000    |       0.76       |       0.92       |
 
-> *Note – English F1 decreases slightly as more Turkish data is added, reflecting capacity re-allocation. Scores remain ≥ 0.76.*
+> *Note – English F1-scores decreases slightly as more Turkish data is added, reflecting capacity re-allocation. Scores remain ≥ 0.76.*
 
 ---
 
